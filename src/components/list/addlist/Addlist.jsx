@@ -79,8 +79,8 @@ setadd(false)
         {userdata && <div className="users">
           <div className="details">
             <div style={{display:"flex" ,justifyContent:"center",alignContent:"center"}} className='userdetails'>
-              {/* <img  src={  userdata.imgdata ||"./user.png"} alt="" /> */}
-              <h1 style={{backgroundColor:"#00254b", paddingLeft:"10px", paddingRight:"10px",border: "3px solid #0095ff", borderRadius:"22px"}}>{userdata.username.slice(0,1)}</h1>
+           <img  src={  userdata.imgdata ||"./user.png"} alt="" /> 
+              {/* <h1 style={{backgroundColor:"#00254b", paddingLeft:"10px", paddingRight:"10px",border: "3px solid #0095ff", borderRadius:"22px"}}>{userdata.username.slice(0,1)}</h1> */}
               <span>{userdata.username}</span>
             </div>
             <button onClick={addUser} >adduser</button>
