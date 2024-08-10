@@ -1,0 +1,116 @@
+.detail{
+    flex: 2;
+}
+
+.detailuser{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid grey;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 10px 0px;
+
+}
+.detailuser>img{
+    width: 70px;
+}
+.back{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+.back>img{
+    height: 25px;
+    margin: 7px;
+    rotate: -91deg;
+    border-radius: 30px;
+    background: #a4a1a17a;
+}
+.detailinfo{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    button{
+        background-color: rgba(255, 17, 0, 0.561);
+        padding: 10px 20px;
+        border: none;
+       border-radius: 10px;
+       margin: 0 10px;
+       cursor: pointer;
+       font-size: 15px;
+
+       color: white;
+       transition-duration: .5s;
+       &:hover{
+        background-color: rgb(255, 0, 60);
+       }
+       
+    }
+    .logoutbtn{
+     background-color: #004effa6;
+     &:hover{
+        background-color: rgb(2, 53, 255);
+     }
+    }
+
+}
+
+.title>span{
+    font-size: 14px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.title{
+    display: flex;
+    padding: 6px;
+align-items: center;
+justify-content: space-between;
+
+img{
+    height: 11px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 5px;
+    background-color:rgb(255 253 245 / 38%);
+}
+}
+.downloadimg{
+    height: 17px;
+    background-color: #ffffff2b;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 6px;
+}
+.photodetails>img{
+object-fit: cover;
+width: 40px;
+border-radius: 10px;
+height: 40px;
+}
+.photos{
+    display: flex;
+    padding: 0 4px;
+    flex-direction: column;
+    gap: 7px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.photodetails{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.photositems{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.photodetails>span{
+    font-size: 14px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 600;
+}

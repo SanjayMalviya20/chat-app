@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.userinfo{
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 20px;
+}
+.user{
+    display:flex ;
+    gap: 10px;
+    align-items: center;
+}
+.user>img{
+    height: 39px;
+    cursor: pointer;
+   
+}
+/* span{
+    color: purple;
+} */
+
+.icons{
+    display: flex;
+    gap: 11px;
+    align-items: center;
+}
+
+.icons>img{
+    height: 18px;
+    cursor: pointer;
+}

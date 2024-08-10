@@ -1,0 +1,72 @@
+
+
+body {
+  margin: 0;
+  /* min-width: 320px; */
+  height: 100vh;
+  background-image: url("./bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  height: 95vh;
+  /* color: wheat; */
+  color: #ffffff;
+  width: 63vw;
+  border-radius: 20px;
+  background-color:rgb(0 148 255 / 12%);
+  backdrop-filter:blur(5px) saturate(140%) ;
+  display: flex;
+
+  .chat{
+    border-radius: 20px;
+
+    .top
+    {
+      border-radius: 20px;
+    }
+  }
+}
+
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  height: 30px;
+  aspect-ratio: 6;
+  display: flex;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  flex: 1;
+  padding-left: calc(100%/6);
+  background: radial-gradient(closest-side at calc(100%/3) 50%,#fdfdfdb8 90%,#0000) 0/75% 100% content-box;
+  animation: l20 2s infinite;
+}
+.loader:after {
+  --_s:-1;
+}
+@keyframes l20 {
+    0%       {transform:scale(var(--_s,1)) translate(0)    rotate(0)}
+    25%      {transform:scale(var(--_s,1)) translate(-25%) rotate(0)}
+    50%      {transform:scale(var(--_s,1)) translate(-25%) rotate(1turn)}
+    75%,100% {transform:scale(var(--_s,1)) translate(0)    rotate(1turn)}
+}
+
+@media (max-width:380px) {
+  .container {
+    height: 96vh;
+    /* color: wheat; */
+    color: #ffffff;
+    width: 93vw;
+    background-color: rgb(19 81 127 / 46%);
+    backdrop-filter: blur(5px) saturate(140%);
+    display: flex;
+}
+}
