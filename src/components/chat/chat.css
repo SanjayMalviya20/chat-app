@@ -161,7 +161,7 @@ padding: 3px;
 
 
 
-@media (max-width:380px) {
+@media (max-width:490px) {
     .centertext>img {
         width: 84%;
         height: 183px;
@@ -172,8 +172,10 @@ padding: 3px;
     .epicker{
     
             position: absolute;
-            bottom: 118px;
-            left: -71px;
+            left: -50px;
+            bottom: 71px;
+
+
        
     }
     .user>img {

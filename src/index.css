@@ -58,9 +58,9 @@ body {
     75%,100% {transform:scale(var(--_s,1)) translate(0)    rotate(1turn)}
 }
 
-@media (max-width:380px) {
+@media (max-width:410px) {
   .container {
-    height: 96vh;
+    height: 88vh;
     /* color: wheat; */
     color: #ffffff;
     width: 93vw;

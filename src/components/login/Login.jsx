@@ -9,8 +9,8 @@ import upload from '../../firebase/upload'  //for file img store
 
 const Login = (props) => {
 
-    const [toggle,setToggle]=useState(false)
-      const img = useRef(null)
+    const [toggle, setToggle] = useState(false)
+    const img = useRef(null)
     const [avtar, setavtar] = useState({    //for img upload 
         file: null,
         url: ""
@@ -39,8 +39,8 @@ const Login = (props) => {
             toast.success("Login successfully!", { closeOnClick: true })
 
         } catch (error) {
-
-           console.log("this is problem" +error.message)
+            toast.error("check email or internet", { closeOnClick: true })
+            console.log("this is problem" + error.message)
         }
 
         finally {
@@ -52,18 +52,18 @@ const Login = (props) => {
     const handleRegister = async (e) => {           //login function
         e.preventDefault()
         const formData = new FormData(e.target) //important for form data
-        const { username, email,password } = Object.fromEntries(formData)  //all input value from form
+        const { username, email, password } = Object.fromEntries(formData)  //all input value from form
         setloading(true)
         try {
 
             const imgUrl = await upload(avtar.file)      //img store in database
             // console.log(imgUrl)
-            const datavalue = await createUserWithEmailAndPassword(auth, email,password) //firebase part
+            const datavalue = await createUserWithEmailAndPassword(auth, email, password) //firebase part
             await setDoc(doc(db, "user", datavalue.user.uid), {
                 username,
                 email,
                 // avatars: "",
-                imgdata:imgUrl,
+                imgdata: imgUrl,
                 id: datavalue.user.uid,
                 blocked: []                                                //for user
             });
@@ -77,6 +77,7 @@ const Login = (props) => {
         } catch (error) {
             console.log(error)
             // toast.error(error.message)
+            toast.error("check email or internet", { closeOnClick: true })
         } finally {
             setloading(false)
         }
@@ -84,22 +85,23 @@ const Login = (props) => {
     return (
 
         <>
+
             <div className="login">
-            { toggle &&  <div className="loginitem">
-                    <h2>welcome back,buddy</h2>
+                {toggle && <div className="loginitem">
+                    <h2>{loadingtwo ? "Please wait.." : "welcome back,buddy"}</h2>
                     <form onSubmit={handleLogin}>
                         <input type="email" name='email' placeholder='enter your email' />
                         <input type="password" name="password" placeholder='enter password' />
                         <button disabled={loadingtwo}>{loadingtwo ? "loading" : "Sign in"}</button>
-                        
+
                     </form>
-                    <button className='btn' onClick={()=>{setToggle((toggle)=>!toggle)}}>sing up</button>
+                    <button className='btn' onClick={() => { setToggle((toggle) => !toggle) }}>sing up</button>
                 </div>}
                 {/* <div className="sperate"></div> */}
 
-                {!toggle &&<div className="loginitem">
-                    <h2>Create an Account</h2>
-               <form onSubmit={handleRegister}>
+                {!toggle && <div className="loginitem">
+                    <h2>{loading ? "Please wait.." : "Create an Account"}</h2>
+                    <form onSubmit={handleRegister}>
                         <div className='img'>
                             <img onClick={() => { img.current.click() }} style={{ cursor: "pointer" }} src={avtar.url ? avtar.url : "./user.png"} alt="" />
                             <label ref={img} className='label' htmlFor="file">Choose image</label>
@@ -111,13 +113,13 @@ const Login = (props) => {
                         <input type="password" name="password" placeholder='enter password' />
                         <button disabled={loading}>{loading ? "loading" : "Sign up"}</button>
                     </form>
-                    <button className='btn' onClick={()=>{setToggle((toggle)=>!toggle)}}>singin</button>
+                    <button className='btn' onClick={() => { setToggle((toggle) => !toggle) }}>sing in</button>
                 </div>}
-                
-              
+
+
             </div>
         </>
     )
 }
- 
+
 export default Login

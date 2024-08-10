@@ -169,7 +169,7 @@ const Chat = (props) => {
             <input  id='input' disabled={iscurrentuserblocked||isreceverblock } value={text} onChange={(e) => { settext(e.target.value) }} style={{ flex: "1" }} type="text" 
             placeholder ={iscurrentuserblocked||isreceverblock ? "you can,t send msg ": "send message"}/>
             <div className='epicker'>
-              <EmojiPicker theme='dark'onEmojiClick={handleclick} open={Emoji} />
+              <EmojiPicker height={"200px"} width={"200px"} theme='dark'onEmojiClick={handleclick} open={Emoji} />
             </div>
             <img onClick={() => { setEmoji((emoji) => !emoji) }} src={emoji} alt="" />
           </div>

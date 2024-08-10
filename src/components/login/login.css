@@ -59,7 +59,7 @@ button {
         background-color: red;
     }
     &:disabled{
-        background-color: chartreuse;
+        background-color: rgb(0, 0, 0);
         cursor: not-allowed;
     }
 }
@@ -101,7 +101,7 @@ button {
     background: #f7080882;
 }
 
-@media (max-width:390px) {
+@media (max-width:410px) {
     .loginitem {
         h2 {
             font-size: 24px;

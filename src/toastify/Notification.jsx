@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Notification = () => {
   return (
     <div>
-      <ToastContainer   theme="colored" position="bottom-right"/>
+      <ToastContainer  theme="colored" position="top-center"/>
     </div>
   )
 }
