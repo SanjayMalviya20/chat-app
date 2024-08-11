@@ -32,7 +32,7 @@ function App() {
 
 // console.log(CurrentUser)
 
-  if(isloading) return <div className='loader'></div>
+  if(isloading) return <div style={{height:"80%",display:"flex",alignContent:"center"}}><div className='loader'></div></div>
   return (
     <>
       <div className="container">

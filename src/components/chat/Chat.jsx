@@ -1,11 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import "./chat.css"
 // import user from "./user.png"
-import phone from "./pn.png"
-import info from "./info.png"
+// import info from "./info.png"
 import emoji from "./happy.png"
-import video from "./video.png"
-import cam from "./cam.png"
+
 import image from "./image.png"
 import EmojiPicker from 'emoji-picker-react';
 import { arrayUnion, doc, getDoc, onSnapshot, updateDoc } from 'firebase/firestore'
@@ -162,15 +160,16 @@ const Chat = (props) => {
           <div className="mediaicons">
             <img onClick={() => { imgsender.current.click() }} src={image} alt="" />
             <input ref={imgsender} type="file" hidden onChange={handleSendimg} />
-            <img src={cam} alt="" />
-            {/* <img src={microphone} alt="" /> */}
+
+       
           </div>
           <div id='emoji' style={{ flex: 1 }}>
             <input  id='input' disabled={iscurrentuserblocked||isreceverblock } value={text} onChange={(e) => { settext(e.target.value) }} style={{ flex: "1" }} type="text" 
             placeholder ={iscurrentuserblocked||isreceverblock ? "you can,t send msg ": "send message"}/>
             <div className='epicker'>
-              <EmojiPicker height={"200px"} width={"200px"} theme='dark'onEmojiClick={handleclick} open={Emoji} />
-            </div>
+              <EmojiPicker height={"327px"} width={"241px"} theme='dark'onEmojiClick={handleclick} open={Emoji} />
+            </div> 
+
             <img onClick={() => { setEmoji((emoji) => !emoji) }} src={emoji} alt="" />
           </div>
           <button disabled={iscurrentuserblocked ||isreceverblock} className='sendbtn' onClick={handleSend}>send</button>
